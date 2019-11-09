@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Meta from '../components/Meta';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 
 const theme = {
     red: '#ff0000',
@@ -25,7 +25,15 @@ const Inner =styled.div`
     padding: 2rem;
 `;
 
-
+injectGlobal`
+    html {
+        box-sizing: border-box;
+        font-size: 10px;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+`;
 
 class Page extends Component {
     render() {
